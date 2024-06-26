@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    justify-content: center;
+      align-items: center;
+      height: 100vh;
+}
+
+main .features {
+    float: left;
+    margin-top: 100px;
+    text-align: center;
+    align-content: center;
+    width: 75%;
+}
+
+.title-input {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.uniqueUrl {
+    width: auto;
+}
+
+.custom-code {
+      background-color: #18243c;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }

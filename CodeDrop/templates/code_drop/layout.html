@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block head %}
+    	
+    {% endblock %}
+</head>
+<body>
+{#    <aside>#}
+{#        <img src="{% static 'main/img/SVG_Logo.png' %}">#}
+{#        <span class="logo">Name</span>#}
+{##}
+{#        <h3>Навигация</h3>#}
+{#        <ul>#}
+{#            <a href="{% url 'index' %}"><li><i class="fas fa-home"></i> Главная</li></a>#}
+{#            <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i> О нас</li></a>#}
+{#            <a href="{% url 'news_home' %}"><li><i class="fas fa-paper-plane"></i> Новости</li></a>#}
+{#            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus"></i> Добавить новость</button></li></a>#}
+{#        </ul>#}
+{#    </aside>#}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

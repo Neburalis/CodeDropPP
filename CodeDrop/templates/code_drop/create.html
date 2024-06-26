@@ -1,0 +1,32 @@
+{% extends 'code_drop/layout.html' %}
+
+{% block title %}
+    Paste your code | CodeDrop
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Paste your code to share it</h1>
+    
+        <form method="post">
+            {% csrf_token %}
+    
+            <div class="mb-3">
+                {{ form.name }}<br>
+            </div>
+            <div class="mb-3">
+                {{ form.text }}<br>
+            </div>
+    
+            <div class="mb-3">
+                {{ form.prog_lang }}<br>
+            </div>
+            <div class="mb-3">
+                {{ form.date_removal }}<br>
+            </div>
+    
+            <button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i> Получить ссылку</button>
+    
+        </form>
+    </div>
+{% endblock %}
