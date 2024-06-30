@@ -271,7 +271,7 @@ cython_debug/
 #docker-compose.*.yml
 .docker/
 docker-sync.yml
-.dockerignore
+#.dockerignore
 
 # Docker volumes and intermediate containers
 **/.docker/
