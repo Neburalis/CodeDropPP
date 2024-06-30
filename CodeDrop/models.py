@@ -1,4 +1,5 @@
 import uuid
+import os
 from django.db import models
 
 
@@ -31,14 +32,8 @@ class CodeDropDB(models.Model):
 
         # unique_id = uuid.uuid4().hex[:8]
 
-        max_attempts = 5
-        digits = 8
-        unique_id = uuid.uuid3(uuid.NAMESPACE_X500, self.name).hex[:digits]
-        if not CodeDropDB.objects.filter(unique_id=unique_id).exists():
-            return unique_id
-        unique_id = uuid.uuid5(uuid.NAMESPACE_X500, self.name).hex[:digits]
-        if not CodeDropDB.objects.filter(unique_id=unique_id).exists():
-            return unique_id
+        max_attempts = int(os.getenv('GENERATE_UNIQUE_ID_MAX_ATTEMPTS'))
+        digits = int(os.getenv('GENERATE_UNIQUE_ID_DIGITS_COUNT'))
         for attempt in range(max_attempts):
             for _ in range(max_attempts):
                 # while CodeDropDB.objects.filter(unique_id=unique_id).exists():
