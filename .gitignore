@@ -265,10 +265,10 @@ cython_debug/
 ### Docker template
 # Docker
 # Ignore Docker specific files and folders
-*.dockerignore
-Dockerfile
-docker-compose.yml
-docker-compose.*.yml
+#*.dockerignore
+#Dockerfile
+#docker-compose.yml
+#docker-compose.*.yml
 .docker/
 docker-sync.yml
 .dockerignore
