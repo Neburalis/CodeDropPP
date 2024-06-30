@@ -9,9 +9,9 @@ from django.db import models
 class CodeDropDB(models.Model):
     name = models.CharField(max_length=100)
     unique_id = models.CharField(max_length=10, unique=True, blank=True, null=True)
-    # prog_lang = models.CharField(max_length=100, null=True, blank=True)
-    # date_created = models.DateTimeField(auto_now_add=True)
-    # date_removal = models.DateTimeField(null=True, blank=True)
+    prog_lang = models.CharField(max_length=100, null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_removal = models.DateTimeField(null=True, blank=True)
     text = models.TextField()
 
     def save(self, *args, **kwargs):
