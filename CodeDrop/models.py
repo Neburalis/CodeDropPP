@@ -1,6 +1,7 @@
 import uuid
 import os
 from django.db import models
+from django.conf import settings
 
 
 # Create your models here.
@@ -13,6 +14,8 @@ class CodeDropDB(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_removal = models.DateTimeField(null=True, blank=True)
     text = models.TextField()
+
+    conf = settings.CODE_DROP_APP_CONF['code_drop_BD_conf']  # cache config for unique_id generator from settings.py
 
     def save(self, *args, **kwargs):
         if not self.unique_id:
@@ -32,8 +35,8 @@ class CodeDropDB(models.Model):
 
         # unique_id = uuid.uuid4().hex[:8]
 
-        max_attempts = int(os.getenv('GENERATE_UNIQUE_ID_MAX_ATTEMPTS'))
-        digits = int(os.getenv('GENERATE_UNIQUE_ID_DIGITS_COUNT'))
+        max_attempts = self.conf['GENERATE_UNIQUE_ID_MAX_ATTEMPTS']
+        digits = self.conf['GENERATE_UNIQUE_ID_MIN_DIGITS_COUNT']
         for attempt in range(max_attempts):
             for _ in range(max_attempts):
                 # while CodeDropDB.objects.filter(unique_id=unique_id).exists():

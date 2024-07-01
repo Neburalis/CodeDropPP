@@ -31,6 +31,12 @@ ALLOWED_HOSTS = [
     '172.17.0.2',
 ]
 
+CODE_DROP_APP_CONF = {  # code drop app config
+    'code_drop_BD_conf': {  # config of code drop bd model
+        'GENERATE_UNIQUE_ID_MAX_ATTEMPTS': 5,
+        'GENERATE_UNIQUE_ID_MIN_DIGITS_COUNT': 8,
+    }
+}
 
 # Application definition
 
